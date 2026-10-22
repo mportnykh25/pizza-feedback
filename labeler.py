@@ -17,17 +17,17 @@ GUIDE = """Label the customer comment with exactly one word: positive or negativ
 # -------------------------------------------------------------------------
 
 # Check Groq's current free models at https://console.groq.com/docs/models
-MODEL = "llama-3.1-8b-instant"
+MODEL = "openai/gpt-oss-20b"
 URL = "https://api.groq.com/openai/v1/chat/completions"
 
 
 def _get_key():
-    key = os.environ.get("GROQ_API_KEY")
+    key = os.environ.get("groq-key-try1")
     if key:
         return key
     try:
         import streamlit as st
-        return st.secrets.get("GROQ_API_KEY")
+        return st.secrets.get("groq-key-try1")
     except Exception:
         return None
 
